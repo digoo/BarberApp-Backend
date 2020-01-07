@@ -1,7 +1,4 @@
 # barberApp
-
-barber App created during the rocketseat.com.br bootcamp
-
 So far, dependencies:
 
 yarn add express <br>
@@ -24,3 +21,5 @@ file nodemon.json changed to include: <br>
   }
 }
 ```
+- Allow frontend to access this backend api
+yarn add cors

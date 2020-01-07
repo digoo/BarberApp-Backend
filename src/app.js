@@ -2,6 +2,7 @@ import 'dotenv/config';
 
 import express from 'express';
 import path from 'path';
+import cors from 'cors';
 import Youch from 'youch';
 import * as Sentry from '@sentry/node';
 import 'express-async-errors';
@@ -23,6 +24,9 @@ class App {
 
   middlewares() {
     this.server.use(Sentry.Handlers.requestHandler());
+    this.server.use(cors());
+    // Toda vez que o endereço abaixo chamar a api ele vai permitir, caso contrario negar, acima tudo liberado
+    // this.server.use(cors({ origin: 'https://rodrigo.com.br' }));
     this.server.use(express.json());
     this.server.use(
       '/files',
